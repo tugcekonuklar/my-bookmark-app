@@ -19,10 +19,10 @@ const Home = () => {
 
     return (
         <div className="container-row">
-            <MenuSlider />
+            <MenuSlider total={5} unsorted={5} />
             <div className="container-column">
                 <TopBar onChange={handleChange}/>
-                <BookMarkList bookmarks={filteredBookMark}></BookMarkList>
+                <BookMarkList bookmarks={filteredBookMark} count={bookMarks.length}></BookMarkList>
             </div>
         </div>
     )

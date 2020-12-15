@@ -1,0 +1,28 @@
+.menu-label-container {
+    display: flex;
+    margin: 5px;
+    width: 100%;
+    height: 30px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.menu-label-icon {
+    width: 30px;
+    height: 30px;
+    margin-bottom: -5px;
+}
+
+.menu-label{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.menu-label-span{
+    margin-right: 5px;
+}
+
+
+
