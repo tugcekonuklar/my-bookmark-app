@@ -15,20 +15,21 @@ const TopBar = (props) => {
 
   return (
     <div className="top-bar-main-container">
-      <Grid container alignItems="flex-start" direction="row">
+      <Grid container alignItems="flex-start" direction="row"
+        style={{ width: '100%', minHeight: '60px', borderBottom: 'solid 1px rgb(227,227,228)', padding: '0 5px' }}>
         <Grid item xs={12} sm={11}>
-          <Grid container  alignItems="flex-end">
+          <Grid container alignItems="flex-end">
             <Grid item >
               <SearchIcon />
             </Grid>
             <Grid item xs>
-              <TextField style={{  width: "90%"}} label="Search" onChange={onChange} />
+              <TextField style={{ width: "90%" }} label="Search" onChange={onChange} />
             </Grid>
           </Grid>
         </Grid>
         <Grid item xs={12} sm={1} >
           <Link to="/add-bookmark">
-            <IconButton component="span"> <PostAddIcon fontSize="large" color="secondary"/></IconButton>
+            <IconButton component="span"> <PostAddIcon fontSize="large" color="secondary" /></IconButton>
           </Link>
         </Grid>
       </Grid>

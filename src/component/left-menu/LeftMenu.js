@@ -20,17 +20,20 @@ const LeftMenu = (props) => {
     // const tags = props.tags.map(tag =>
     //     <MenuLabel title={tag.title} count={tag.count}><LabelIcon /></MenuLabel>);
     return (
-        <Grid container direction="column">
-            <Grid item>
-                <ProfileMenu />
+        <Grid container direction="column" justify="space-between" alignContent="center" style={{display: 'flex'}}>
+            <Grid container direction="column" style={{flex: "1"}}>
+                <Grid item>
+                    <ProfileMenu />
+                </Grid>
+                <Grid item>
+                    <TabMenu />
+                </Grid>
             </Grid>
-            <Grid item>
-                <TabMenu />
-            </Grid>
-            <Grid item>
-                <ColoredButton>SIGN OUT</ColoredButton>
+            <Grid item alignSelf="flex-end" style={{flex: "none", padding: '10px'}}>
+                <ColoredButton >SIGN OUT</ColoredButton>
             </Grid>
         </Grid>
+
     )
 }
 

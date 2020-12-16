@@ -21,21 +21,18 @@ const Home = () => {
     }, [bookMarks, searchedText])
 
     return (
-        <div className="home-container-row">
-            <Grid container direction="row"
-                style={{height: "100%" }}
-                justify="space-between"
-                alignItems="flex-start" >
-                <Grid item xs={12} sm={3} style={{ borderRight: "1px solid rgba(0, 0, 0, 0.12)", height: "auto" }}>
-                    <LeftMenu />
-                </Grid>
-                <Grid item xs={12} sm={9}>
-                    <TopBar onChange={handleChange} />
-                    <BookMarkList bookmarks={filteredBookMark}></BookMarkList>
-                </Grid>
+        <Grid container direction="row"
+            style={{ height: "100%"}}
+            justify="space-between"
+            alignItems="flex-start" >
+            <Grid item xs={12} sm={3} style={{ borderRight: "1px solid rgba(0, 0, 0, 0.12)", height: "100%" , display: 'flex'}}>
+                <LeftMenu />
             </Grid>
-        </div>
-
+            <Grid item xs={12} sm={9}>
+                <TopBar onChange={handleChange} />
+                <BookMarkList bookmarks={filteredBookMark}></BookMarkList>
+            </Grid>
+        </Grid>
     )
 }
 export default Home;
