@@ -6,13 +6,9 @@ import CloudQueueIcon from '@material-ui/icons/CloudQueue';
 import FolderOpenIcon from '@material-ui/icons/FolderOpen';
 import FolderIcon from '@material-ui/icons/Folder';
 import LabelOutlinedIcon from '@material-ui/icons/LabelOutlined';
-import IconButton from '@material-ui/core/IconButton';
-import Button from '@material-ui/core/Button';
-import AddIcon from '@material-ui/icons/Add';
-import ProfileMenu from '../profile-menu/ProfileMenu'
-import ColoredButton from '../colored-button/ColoredButton'
 import IconLabel from '../icon-label/IconLabel';
 import Typography from '@material-ui/core/Typography';
+
 
 function a11yProps(index) {
   return {
@@ -23,7 +19,6 @@ function a11yProps(index) {
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    // height: '100%',
     textTransform: "none",
   },
   tabs: {
@@ -49,7 +44,7 @@ const useStyles = makeStyles((theme) => ({
   },
   tabTitle: {
     color: '#828282',
-    padding: '10px'
+    padding: '5px'
   }
 }));
 
@@ -73,10 +68,10 @@ export default function TabMenu() {
       >
         <Tab className={classes.tab} icon={<IconLabel text="All Bookmarks" icon={<CloudQueueIcon />} count="5" />} {...a11yProps(0)} selected="true" />
         <Tab className={classes.tab} icon={<IconLabel text="Unsorted Bookmarks" icon={<FolderOpenIcon />} count="5" />} {...a11yProps(1)} />
-        <Typography className={classes.tabTitle} variant="h6" gutterBottom>My Collections</Typography>
-        <Tab className={classes.tab} icon={<IconLabel text="My Personal Bookmark" icon={<FolderIcon />} count="1" />} {...a11yProps(3)} />
-        <Typography className={classes.tabTitle} variant="h6" gutterBottom>My Tags</Typography>
-        <Tab className={classes.tab} icon={<IconLabel text="personal" icon={<LabelOutlinedIcon />} count="1" />} {...a11yProps(4)} />
+        <Tab className={classes.tab} disabled label={<Typography className={classes.tabTitle} variant="subtitle1"  >My Collections</Typography>} />
+        <Tab className={classes.tab} icon={<IconLabel text="My Personal Bookmark" icon={<FolderIcon />} count="1" />} {...a11yProps(2)} />
+        <Tab className={classes.tab} disabled label={<Typography className={classes.tabTitle} variant="subtitle1"  >My Tags</Typography>} />
+        <Tab className={classes.tab} icon={<IconLabel text="personal" icon={<LabelOutlinedIcon />} count="1" />} {...a11yProps(3)} />
       </Tabs>
     </div>
   );

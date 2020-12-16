@@ -5,8 +5,6 @@ import SearchIcon from '@material-ui/icons/Search';
 import TextField from '@material-ui/core/TextField';
 import IconButton from '@material-ui/core/IconButton';
 
-import './top-bar.css';
-
 const TopBar = (props) => {
 
   function onChange(e) {
@@ -14,7 +12,6 @@ const TopBar = (props) => {
   }
 
   return (
-    <div className="top-bar-main-container">
       <Grid container alignItems="flex-start" direction="row"
         style={{ width: '100%', minHeight: '60px', borderBottom: 'solid 1px rgb(227,227,228)', padding: '0 5px' }}>
         <Grid item xs={12} sm={11}>
@@ -23,7 +20,7 @@ const TopBar = (props) => {
               <SearchIcon />
             </Grid>
             <Grid item xs>
-              <TextField style={{ width: "90%" }} label="Search" onChange={onChange} />
+              <TextField style={{ width: "95%" }} label="Search" onChange={onChange} />
             </Grid>
           </Grid>
         </Grid>
@@ -33,7 +30,6 @@ const TopBar = (props) => {
           </Link>
         </Grid>
       </Grid>
-    </div>
   )
 }
 

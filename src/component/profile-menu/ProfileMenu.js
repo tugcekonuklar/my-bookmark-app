@@ -14,7 +14,7 @@ const ProfileMenu = () => {
             <Grid item >
             <Avatar alt="Tugce Konuklar" src="https://www.gravatar.com/avatar/e03e6801a0d1a11ab1472c1936279d9e?d=mm&amp;s=60" />
             </Grid>
-            <Grid item xs >
+            <Grid item >
                 <Typography variant="subtitle1" gutterBottom>
                     tkonuklar@gmail.com
                  </Typography>
