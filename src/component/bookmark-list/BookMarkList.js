@@ -8,7 +8,7 @@ const BookMarkList = (props) => {
 
     return (<div className="bookmark-main-container">
         {bookMarks}
-        <div className="bookmark-footer">{props.count} bookmarks </div>
+        <div className="bookmark-footer">{bookMarks.length} bookmarks </div>
         </div>)
 }
 

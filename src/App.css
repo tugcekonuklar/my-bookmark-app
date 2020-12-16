@@ -50,3 +50,9 @@
   flex-direction: column;
   flex: 2;
 }
+
+html,
+body,
+#root {
+  height: 100%;
+}
