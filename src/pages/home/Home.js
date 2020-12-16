@@ -27,7 +27,7 @@ const Home = () => {
                 justify="space-between"
                 alignItems="flex-start" >
                 <Grid item xs={12} sm={3} style={{ borderRight: "1px solid rgba(0, 0, 0, 0.12)", height: "auto" }}>
-                    <TabMenu />
+                    <LeftMenu />
                 </Grid>
                 <Grid item xs={12} sm={9}>
                     <TopBar onChange={handleChange} />

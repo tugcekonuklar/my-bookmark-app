@@ -1,19 +1,25 @@
 import Grid from '@material-ui/core/Grid';
+import Avatar from '@material-ui/core/Avatar';
+import Typography from '@material-ui/core/Typography';
+import IconLabel from '../icon-label/IconLabel'
 
-import './profile-menu.css'
 const ProfileMenu = () => {
 
     return (
-    <div className="profile-container">
-        <Grid container spacing={2} alignItems="center" alignContent="space-between">
-            <Grid item sx={6} sm={4}>
-                <img className="avatar" src="https://www.gravatar.com/avatar/e03e6801a0d1a11ab1472c1936279d9e?d=mm&amp;s=60" />
+        <Grid container direction="row"
+            spacing={2}
+            alignItems="center"
+            justify="space-between"
+            style={{ padding: "10px" }} >
+            <Grid item >
+            <Avatar alt="Tugce Konuklar" src="https://www.gravatar.com/avatar/e03e6801a0d1a11ab1472c1936279d9e?d=mm&amp;s=60" />
             </Grid>
-            <Grid item sx={6} sm={2}>
-                <span>tkonuklar@gmail.com</span>
+            <Grid item xs >
+                <Typography variant="subtitle1" gutterBottom>
+                    tkonuklar@gmail.com
+                 </Typography>
             </Grid>
         </Grid>
-    </div>
     )
 }
 

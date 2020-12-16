@@ -11,6 +11,7 @@ import Button from '@material-ui/core/Button';
 import AddIcon from '@material-ui/icons/Add';
 import ProfileMenu from '../profile-menu/ProfileMenu'
 import ColoredButton from '../colored-button/ColoredButton'
+import IconLabel from '../icon-label/IconLabel';
 
 function a11yProps(index) {
   return {
@@ -22,7 +23,6 @@ function a11yProps(index) {
 const useStyles = makeStyles((theme) => ({
   root: {
     height: '100%',
-    minWidth: '300px',
     textTransform: "none",
   },
   tabs: {
@@ -53,7 +53,6 @@ export default function TabMenu() {
 
   return (
     <div className={classes.root}>
-      <ProfileMenu/>
       <Tabs
         orientation="vertical"
         variant="scrollable"
@@ -62,8 +61,8 @@ export default function TabMenu() {
         aria-label="Vertical tabs example"
         className={classes.tabs}
       >
-        {/* <Tab className={classes.tab} icon={<ProfileMenu/>} {...a11yProps(0)} /> */}
-        <Tab className={classes.tab}  label="Item one" {...a11yProps(0)} />
+        <Tab className={classes.tab}  icon={<IconLabel text="All Bookmarks" icon={<CloudQueueIcon/>} count="5"/>} {...a11yProps(0)} />
+        <Tab className={classes.tab}  icon={<IconLabel text="Unsorted Bookmarks" icon={<FolderOpenIcon/>}  count="5"/>} {...a11yProps(0)} />
         <Tab className={classes.tab}  label="Item Two" {...a11yProps(1)} selected="true"/>
         <Tab className={classes.tab}  label="Item Three" {...a11yProps(2)} />
         <Tab className={classes.tab}  label="Item Four" {...a11yProps(3)} />
@@ -71,7 +70,6 @@ export default function TabMenu() {
         <Tab className={classes.tab}  label="Item Six" {...a11yProps(5)} />
         <Tab className={classes.tab}  label="Item Seven" {...a11yProps(6)} />
       </Tabs>
-      <ColoredButton>SIGN OUT</ColoredButton>
     </div>
   );
 }

@@ -8,6 +8,8 @@ import LabelOutlinedIcon from '@material-ui/icons/LabelOutlined';
 import IconButton from '@material-ui/core/IconButton';
 import Button from '@material-ui/core/Button';
 import AddIcon from '@material-ui/icons/Add';
+import Grid from '@material-ui/core/Grid';
+import TabMenu from '../tab-menu/TabMenu'
 import './left-menu.css'
 
 const LeftMenu = (props) => {
@@ -17,26 +19,19 @@ const LeftMenu = (props) => {
 
     // const tags = props.tags.map(tag =>
     //     <MenuLabel title={tag.title} count={tag.count}><LabelIcon /></MenuLabel>);
-
-
-    return (<div className="slider-container">
-        <ProfileMenu />
-        <div className="slider-inner-container">
-            <MenuLabel title="All Bookmarks" count={props.total}><CloudQueueIcon /></MenuLabel>
-            <MenuLabel title="Unsorted Bookmarks" count={props.unsorted}><FolderOpenIcon /></MenuLabel>
-            <div className="menu-slider-collection-container">
-                <h4 className="menu-slider-title">My Collections</h4>
-                <IconButton><AddIcon /></IconButton>
-            </div>
-            <MenuLabel title="My Collection baby" count={0}><FolderIcon /></MenuLabel>
-            <h4 className="menu-slider-title">My Tags</h4>
-            <MenuLabel title="My tags baby" count={0}><LabelOutlinedIcon /></MenuLabel>
-            <div className="sign-out-button">
+    return (
+        <Grid container direction="column">
+            <Grid item>
+                <ProfileMenu />
+            </Grid>
+            <Grid item>
+                <TabMenu />
+            </Grid>
+            <Grid item>
                 <ColoredButton>SIGN OUT</ColoredButton>
-            </div>
-        </div>
-
-    </div>)
+            </Grid>
+        </Grid>
+    )
 }
 
 export default LeftMenu;
