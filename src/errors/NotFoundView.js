@@ -39,7 +39,7 @@ const NotFoundView = () => {
           <Typography
             align="center"
             color="textPrimary"
-            variant="h1"
+            variant="h2"
           >
             404: The page you are looking for isn’t here
           </Typography>
@@ -59,6 +59,7 @@ const NotFoundView = () => {
             />
           </Box>
         </Container>
+        
       </Box>
     </Page>
   );
