@@ -1,18 +1,15 @@
-import logo from './logo.svg';
-import './App.css';
-import { HashRouter, Switch, Route } from 'react-router-dom';
-import Home from './pages/home/Home'
-import AddBookMark from './pages/add-bookmark/AddBookMark'
-import Grid from "@material-ui/core/Grid";
+import { BrowserRouter, useRoutes } from 'react-router-dom';
+import GlobalStyles from './component/GlobalStyles'
+import routes from './routes';
 
 function App() {
+  const routing = useRoutes(routes);
   return (
-      <HashRouter>
-        <Switch>
-          <Route path="/add-bookmark" component={AddBookMark} />
-          <Route path="/" component={Home} />
-        </Switch>
-      </HashRouter>
+    <>
+      <GlobalStyles />
+      {routing}
+    </>
+
   );
 }
 

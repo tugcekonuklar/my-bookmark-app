@@ -2,7 +2,6 @@ import { useState, useMemo } from 'react';
 import LeftMenu from '../../component/left-menu/LeftMenu'
 import TopBar from '../../component/top-bar/TopBar'
 import BookMarkList from '../../component/bookmark-list/BookMarkList'
-import TabMenu from '../../component/tab-menu/TabMenu'
 import Grid from '@material-ui/core/Grid';
 
 const Home = () => {
