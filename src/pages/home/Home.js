@@ -23,10 +23,10 @@ const Home = () => {
             style={{ height: "100%"}}
             justify="space-between"
             alignItems="flex-start" >
-            <Grid item style={{display: 'flex'}}>
-                <LeftMenu />
-            </Grid>
-            <Grid item sm>
+                {/* <Grid item style={{display: 'flex'}}>
+                    <LeftMenu />
+                </Grid> */}
+            <Grid item>
                 <TopBar onChange={handleChange} />
                 <BookMarkList bookmarks={filteredBookMark}></BookMarkList>
             </Grid>

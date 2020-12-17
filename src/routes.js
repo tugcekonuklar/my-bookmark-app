@@ -12,7 +12,7 @@ const routes = [
     element: <DashBoardLayout />,
     children: [
       { path: 'home', element: <Home />},
-      { path: 'addBookmark', element:  <Navigate to={<AddBookMark />}/> },
+      { path: 'addBookmark', element: <AddBookMark /> },
       { path: '*', element: <Navigate to="/404" /> }
     ]
   },
@@ -21,8 +21,7 @@ const routes = [
     element: <MainLayout />,
     children: [
       { path: '404', element: <NotFoundView /> },
-      { path: '/', element: <Navigate to="/app/home" />},
-      { path: 'add-bookmark', element: <AddBookMark /> },
+      { path: '/', element: <Navigate to="/app" />},
       { path: '*', element: <Navigate to="/404" /> }
     ]
   }

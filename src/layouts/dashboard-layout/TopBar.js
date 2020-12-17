@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import {useState} from 'react'
 import {
     AppBar, Badge, Box, Hidden, IconButton, Toolbar, makeStyles
 } from '@material-ui/core'
@@ -18,47 +18,47 @@ const useStyles = makeStyles(() => ({
     }
 }));
 
-const TopBar = ({ className, onMobileNavOpen, ...rest }) => {
+const TopBar = ({ className,  onMobileNavOpen, ...rest }) => {
     const classes = useStyles();
-    const [notifications] = useState([]);
-
+    const [notifications] = useState([1,2]);
+  
     return (
         <AppBar
-            className={clsx(classes.root, className)}
-            elevation={0}
-            {...rest}
+          className={clsx(classes.root, className)}
+          elevation={0}
+          {...rest}
         >
-            <Toolbar>
-                <RouterLink to="/">
-                    <Logo />
-                </RouterLink>
-                <Box flexGrow={1} />
-                <Hidden mdDown>
-                    <IconButton color="inherit">
-                        <Badge
-                            badgeContent={notifications.length}
-                            color="primary"
-                            variant="dot"
-                        >
-                            <NotificationsIcon />
-                        </Badge>
-                    </IconButton>
-                    <IconButton color="inherit">
-                        <InputIcon />
-                    </IconButton>
-                </Hidden>
-                <Hidden lgUp>
-                    <IconButton
-                        color="inherit"
-                        onClick={onMobileNavOpen}
-                    >
-                        <MenuIcon />
-                    </IconButton>
-                </Hidden>
-            </Toolbar>
+          <Toolbar>
+            <RouterLink to="/">
+              <Logo />
+            </RouterLink>
+            <Box flexGrow={1} />
+            <Hidden mdDown>
+              <IconButton color="inherit">
+                <Badge
+                  badgeContent={notifications.length}
+                  color="secondary"
+                  variant="dot"
+                >
+                  <NotificationsIcon />
+                </Badge>
+              </IconButton>
+              <IconButton color="inherit">
+                <InputIcon />
+              </IconButton>
+            </Hidden>
+            <Hidden lgUp>
+              <IconButton
+                color="inherit"
+                onClick={onMobileNavOpen}
+              >
+                <MenuIcon />
+              </IconButton>
+            </Hidden>
+          </Toolbar>
         </AppBar>
-    );
-};
+      );
+    };
 
 Toolbar.prototype = {
     className: PropTypes.string,
