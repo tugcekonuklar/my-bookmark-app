@@ -55,7 +55,7 @@ const NotFoundView = () => {
             <img
               alt="Under development"
               className={classes.image}
-              src="/static/images/undraw_page_not_found_su7k.svg"
+              src="/static/images/undraw_not_found_60pq.svg"
             />
           </Box>
         </Container>

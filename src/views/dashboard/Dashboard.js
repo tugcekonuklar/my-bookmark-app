@@ -1,3 +1,4 @@
+import { useEffect, useMemo ,useState} from 'react'
 import { Container, Box, makeStyles } from '@material-ui/core'
 import Page from '../../component/page/Page'
 import PropType from 'prop-types'
@@ -14,17 +15,35 @@ const useStyles = makeStyles((theme) => ({
     }
 }));
 
+
+
 const Dashboard = ({ title }) => {
+    const [bookmarks, setBookmarks] = useState(dummyData);
     const classes = useStyles();
+    const [searchedText, setSearchedText] = useState("");
+
+    const filteredBookMark = useMemo(() => {
+        if (!bookmarks) return []
+        if (!searchedText) return bookmarks
+        return bookmarks.filter(bookmark => 
+            bookmark.content.toLocaleLowerCase().includes(searchedText.toLocaleLowerCase())
+            ||  bookmark.title.toLocaleLowerCase().includes(searchedText.toLocaleLowerCase())
+        );
+    }, [bookmarks, searchedText])
+
+    function handleChange(value) {
+        setSearchedText(value);
+    }
+
     return (
         <Page
             className={classes.root}
             title={title}
         >
             <Container maxWidth={false}>
-                <ToolBar />
+                <ToolBar onChange={handleChange}/>
                 <Box mt={3}>
-                    <BookmarkList bookmarks={dummyData}/>
+                    <BookmarkList bookmarks={filteredBookMark} />
                 </Box>
             </Container>
         </Page>)
