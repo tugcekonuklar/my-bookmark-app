@@ -1,8 +1,7 @@
-import { Box, Card, Button, TextField, InputAdornment, SvgIcon, Fab, makeStyles, CardContent } from '@material-ui/core'
+import { Box, Card, TextField, InputAdornment, SvgIcon, Fab, makeStyles, CardContent } from '@material-ui/core'
 import clsx from 'clsx'
 import PropTypes from 'prop-types'
 import { Search as SearchIcon } from 'react-feather';
-import AddIcon from '@material-ui/icons/Add';
 import PostAddIcon from '@material-ui/icons/PostAdd';
 
 const useStyles = makeStyles(() => ({
@@ -67,7 +66,8 @@ const ToolBar = ({ className, onChange, ...rest }) => {
 }
 
 ToolBar.propTypes = {
-    className: PropTypes.string
+    className: PropTypes.string,
+    onChange: PropTypes.func
 }
 
 export default ToolBar;

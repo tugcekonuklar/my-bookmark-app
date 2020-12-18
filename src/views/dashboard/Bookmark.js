@@ -1,5 +1,5 @@
 import { Card, CardContent, CardActionArea, CardActions, CardMedia, Box, Typography, makeStyles, IconButton } from '@material-ui/core'
-import { Trash2, Hash } from 'react-feather';
+import { Trash2 } from 'react-feather';
 import ProtoTypes from 'prop-types'
 import clsx from 'clsx'
 import Tag from './Tag'
@@ -17,7 +17,7 @@ const useStyles = makeStyles(() => (
     }
 ))
 
-const Bookmark = ({ title, content, tags, imageUrl, className, ...rest }) => {
+const Bookmark = ({ id, title, content, tags, imageUrl, className, onDelete , ...rest }) => {
     const classes = useStyles();
     const tagString = tags.map((tag, index) => (
         <Tag content={tag} key={index} />
@@ -48,7 +48,7 @@ const Bookmark = ({ title, content, tags, imageUrl, className, ...rest }) => {
                         <Box pl={2} >
                             {tagString}
                         </Box>
-                        <IconButton color="inherit">
+                        <IconButton color="inherit" onClick={() => onDelete(id)}>
                             <Trash2 color="#0000008a" size="15px" />
                         </IconButton>
                     </Box>
@@ -59,11 +59,13 @@ const Bookmark = ({ title, content, tags, imageUrl, className, ...rest }) => {
 }
 
 Bookmark.prototypes = {
+    id: ProtoTypes.number,
     className: ProtoTypes.string,
     content: ProtoTypes.string,
     title: ProtoTypes.string,
     tags: ProtoTypes.array,
-    imageUrl: ProtoTypes.string
+    imageUrl: ProtoTypes.string,
+    onDelete: ProtoTypes.func,
 }
 
 export default Bookmark;

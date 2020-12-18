@@ -11,7 +11,9 @@ import NotificationsIcon from '@material-ui/icons/NotificationsOutlined';
 import InputIcon from '@material-ui/icons/Input';
 
 const useStyles = makeStyles(() => ({
-    root: {},
+    root: {
+      // background : '#283593'
+    },
     avatar: {
         height: 60,
         width: 60

@@ -1,4 +1,4 @@
-import { Box, Typography, makeStyles, IconButton } from '@material-ui/core'
+import { Box, Typography, makeStyles } from '@material-ui/core'
 import { Hash } from 'react-feather';
 import ProtoTypes from 'prop-types'
 import clsx from 'clsx'

@@ -1,4 +1,4 @@
-import { useEffect, useMemo ,useState} from 'react'
+import { useMemo ,useState} from 'react'
 import { Container, Box, makeStyles } from '@material-ui/core'
 import Page from '../../component/page/Page'
 import PropType from 'prop-types'
@@ -35,6 +35,12 @@ const Dashboard = ({ title }) => {
         setSearchedText(value);
     }
 
+    function handleDelete(index) {
+        const newArr = [...bookmarks];
+        newArr.splice(index, 1);
+       setBookmarks(newArr);
+    }
+
     return (
         <Page
             className={classes.root}
@@ -43,7 +49,7 @@ const Dashboard = ({ title }) => {
             <Container maxWidth={false}>
                 <ToolBar onChange={handleChange}/>
                 <Box mt={3}>
-                    <BookmarkList bookmarks={filteredBookMark} />
+                    <BookmarkList bookmarks={filteredBookMark} onDelete={handleDelete} />
                 </Box>
             </Container>
         </Page>)

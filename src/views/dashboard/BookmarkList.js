@@ -1,4 +1,4 @@
-import { Box, Grid, makeStyles } from '@material-ui/core'
+import { Grid, makeStyles } from '@material-ui/core'
 import clsx from 'clsx'
 import PropTypes from 'prop-types'
 import Bookmark from './Bookmark'
@@ -7,7 +7,7 @@ const useStyles = makeStyles(() => ({
     root: {}
 }));
 
-const BookmarkList = ({ className, bookmarks, ...rest }) => {
+const BookmarkList = ({ className, onDelete, bookmarks, ...rest }) => {
     const classes = useStyles();
     const bookmarkList = bookmarks.map((bookmark, index) => (
         <Grid
@@ -19,11 +19,12 @@ const BookmarkList = ({ className, bookmarks, ...rest }) => {
             key={index}
         >
             <Bookmark
+                id={index}
                 title={bookmark.title}
                 content={bookmark.content}
                 tags={bookmark.tags}
-                imageUrl={bookmark.image} />
-
+                imageUrl={bookmark.image}
+                onDelete={onDelete} />
         </Grid>
     ));
 
@@ -44,6 +45,7 @@ const BookmarkList = ({ className, bookmarks, ...rest }) => {
 BookmarkList.propTypes = {
     className: PropTypes.string,
     bookmarks: PropTypes.array,
+    onDelete: PropTypes.func,
 }
 
-export default BookmarkList;
+export default BookmarkList; 
