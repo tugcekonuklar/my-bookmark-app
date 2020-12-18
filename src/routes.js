@@ -1,6 +1,7 @@
 import React from 'react';
 import { Navigate } from 'react-router-dom';
 import Home from './pages/home/Home';
+import Dashboard from './views/dashboard/Dashboard';
 import AddBookMark from './pages/add-bookmark/AddBookMark'
 import MainLayout from './layouts/main-layout/MainLayout'
 import DashBoardLayout from './layouts/dashboard-layout/DashBoardLayout'
@@ -11,6 +12,7 @@ const routes = [
     path: 'app',
     element: <DashBoardLayout />,
     children: [
+      { path: 'dashboard', element: <Dashboard />},
       { path: 'home', element: <Home />},
       { path: 'addBookmark', element: <AddBookMark /> },
       { path: '*', element: <Navigate to="/404" /> }
@@ -21,7 +23,7 @@ const routes = [
     element: <MainLayout />,
     children: [
       { path: '404', element: <NotFoundView /> },
-      { path: '/', element: <Navigate to="/app" />},
+      { path: '/', element: <Navigate to="/app/dashboard" />},
       { path: '*', element: <Navigate to="/404" /> }
     ]
   }
