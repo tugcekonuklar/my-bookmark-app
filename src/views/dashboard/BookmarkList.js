@@ -24,6 +24,7 @@ const BookmarkList = ({ className, onDelete, bookmarks, ...rest }) => {
                 content={bookmark.content}
                 tags={bookmark.tags}
                 imageUrl={bookmark.image}
+                url={bookmark.url}
                 onDelete={onDelete} />
         </Grid>
     ));

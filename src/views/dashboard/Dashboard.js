@@ -5,6 +5,7 @@ import PropType from 'prop-types'
 import ToolBar from './ToolBar'
 import BookmarkList from './BookmarkList'
 import dummyData from './data'
+import urlMetaData from '../../utils/urlMetaData';
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -14,8 +15,6 @@ const useStyles = makeStyles((theme) => ({
         paddingTop: theme.spacing(3)
     }
 }));
-
-
 
 const Dashboard = ({ title }) => {
     const [bookmarks, setBookmarks] = useState(dummyData);
@@ -27,7 +26,8 @@ const Dashboard = ({ title }) => {
         if (!searchedText) return bookmarks
         return bookmarks.filter(bookmark =>
             bookmark.content.toLocaleLowerCase().includes(searchedText.toLocaleLowerCase())
-            || bookmark.title.toLocaleLowerCase().includes(searchedText.toLocaleLowerCase())
+            || bookmark.title.toLocaleLowerCase().includes(searchedText.toLocaleLowerCase()
+            )
         );
     }, [bookmarks, searchedText])
 
@@ -44,11 +44,14 @@ const Dashboard = ({ title }) => {
     function handleCreate(bookmark) {
         const bm = {
             content: bookmark.url,
-            tags:[bookmark.tag],
+            tags: [bookmark.tag],
             image: null,
             title: "Sample",
-            id: Math.floor(Math.random() * 100) + 7
+            id: Math.floor(Math.random() * 100) + 7,
+            url: "https://medium.com/@TKonuklar"
         }
+        debugger;
+        // console.log(urlMetaData(bookmark.url))
         setBookmarks([...bookmarks, bm])
     }
 
@@ -67,7 +70,7 @@ const Dashboard = ({ title }) => {
 
 }
 
-Dashboard.prototype = {
+Dashboard.propTypes = {
     title: PropType.string
 }
 

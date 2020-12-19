@@ -67,10 +67,10 @@ const ToolBar = ({ className, onChange, onCreate, ...rest }) => {
                                 color="secondary"
                                 aria-describedby={id}
                                 aria-label="add"
-                                variant="extended"
+                                // variant="extended"
                                 onClick={handleClick}>
                                 <AddIcon />
-                                Add Bookmark
+                                {/* Add Bookmark */}
                             </Fab>
                             <Popover
                                 style={{ marginTop: "5px" }}
@@ -79,7 +79,7 @@ const ToolBar = ({ className, onChange, onCreate, ...rest }) => {
                                 anchorEl={anchorEl}
                                 onClose={handleClosePopOver}
                                 anchorOrigin={{
-                                    vertical: 'bottom',
+                                    vertical: 'top',
                                     horizontal: 'right',
                                 }}
                                 transformOrigin={{
@@ -87,7 +87,7 @@ const ToolBar = ({ className, onChange, onCreate, ...rest }) => {
                                     horizontal: 'right',
                                 }}
                             >
-                                <Box minWidth={500}>
+                                <Box minWidth={300}>
                                     <Card>
                                         <CardContent>
                                             <Formik
@@ -138,7 +138,7 @@ const ToolBar = ({ className, onChange, onCreate, ...rest }) => {
                                                             />
                                                             <Box my={2}>
                                                                 <Button
-                                                                    color="primary"
+                                                                    color="secondary"
                                                                     disabled={isSubmitting}
                                                                     fullWidth
                                                                     type="submit"

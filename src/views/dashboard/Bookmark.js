@@ -1,6 +1,6 @@
 import { Card, CardContent, CardActionArea, CardActions, CardMedia, Box, Typography, makeStyles, IconButton } from '@material-ui/core'
 import { Trash2 } from 'react-feather';
-import ProtoTypes from 'prop-types'
+import PropTypes from 'prop-types'
 import clsx from 'clsx'
 import Tag from './Tag'
 
@@ -17,32 +17,33 @@ const useStyles = makeStyles(() => (
     }
 ))
 
-const Bookmark = ({ id, title, content, tags, imageUrl, className, onDelete , ...rest }) => {
+const Bookmark = ({ id, title, content, url,tags, imageUrl, className, onDelete, ...rest }) => {
     const classes = useStyles();
     const tagString = tags.map((tag, index) => (
         <Tag content={tag} key={index} />
     ));
-    
+    const DEFAULT_IMAGE = "/static/images/undraw_not_found_60pq.svg";
 
     return (
         <div className={clsx(classes.root, className)}
             {...rest}>
             <Card className={clsx(classes.root, className)} {...rest}>
-                <CardActionArea>
-                    <CardMedia
-                        className={classes.media}
-                        image={imageUrl}
-                        title="Contemplative Reptile"
-                    />
-                    <CardContent>
-                        <Typography gutterBottom variant="h5" component="h2">
-                            {title}
-                        </Typography>
-                        <Typography variant="body2" color="textSecondary" component="p" noWrap >
-                            {content}
-                        </Typography>
-                    </CardContent>
-                </CardActionArea>
+                    <CardActionArea href={url} target="_blank">
+                        <CardMedia
+                            className={classes.media}
+                            image={!imageUrl ? DEFAULT_IMAGE : imageUrl}
+                            component="img"
+                            title="Contemplative Reptile"
+                        />
+                        <CardContent>
+                            <Typography gutterBottom variant="h5" component="h2">
+                                {title}
+                            </Typography>
+                            <Typography variant="body2" color="textSecondary" component="p" noWrap >
+                                {content}
+                            </Typography>
+                        </CardContent>
+                    </CardActionArea>
                 <CardActions className={classes.action}>
                     <Box display="flex" justifyContent="space-between" alignItems="center" style={{ width: "100%" }} >
                         <Box pl={2} >
@@ -58,14 +59,15 @@ const Bookmark = ({ id, title, content, tags, imageUrl, className, onDelete , ..
         </div>)
 }
 
-Bookmark.prototypes = {
-    id: ProtoTypes.number,
-    className: ProtoTypes.string,
-    content: ProtoTypes.string,
-    title: ProtoTypes.string,
-    tags: ProtoTypes.array,
-    imageUrl: ProtoTypes.string,
-    onDelete: ProtoTypes.func,
+Bookmark.propTypes = {
+    id: PropTypes.number,
+    className: PropTypes.string,
+    content: PropTypes.string,
+    title: PropTypes.string,
+    tags: PropTypes.array,
+    imageUrl: PropTypes.string,
+    onDelete: PropTypes.func,
+    url: PropTypes.string
 }
 
 export default Bookmark;

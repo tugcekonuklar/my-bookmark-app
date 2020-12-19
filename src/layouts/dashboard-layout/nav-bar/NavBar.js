@@ -2,7 +2,7 @@ import { useEffect } from 'react'
 import { Avatar, Box, Button, Divider, Drawer, Hidden, List, Typography, makeStyles } from '@material-ui/core';
 import { Link as RouterLink, useLocation } from 'react-router-dom';
 import NavItem from './NavItem'
-import { Cloud, Folder, FolderPlus, Hash } from 'react-feather';
+import { Cloud, Folder, Hash } from 'react-feather';
 import PropTypes from 'prop-types'
 
 const user = {
@@ -53,13 +53,13 @@ const useStyles = makeStyles((theme) => ({
 
 const NavBar = ({ onMobileClose, openMobile }) => {
     const classes = useStyles();
-    let location = useLocation();
+    const location = useLocation();
 
-    useEffect(()=>{
-        if(openMobile && onMobileClose){
+    useEffect(() => {
+        if (openMobile && onMobileClose) {
             onMobileClose();
         }
-    },[location.pathname])
+    }, [location.pathname]);
 
     const content = (<Box
         height="100%"
@@ -185,4 +185,5 @@ NavBar.defaultProps = {
     onMobileClose: () => { },
     openMobile: false
 };
+
 export default NavBar;
