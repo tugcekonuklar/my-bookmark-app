@@ -6,7 +6,7 @@ const Logo = (props) => {
     <img
       className="logo"
       alt="Logo"
-      src="/static/star.svg"
+      src="/static/logo.svg"
       {...props}
     />
   );

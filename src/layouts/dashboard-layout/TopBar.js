@@ -12,7 +12,7 @@ import InputIcon from '@material-ui/icons/Input';
 
 const useStyles = makeStyles(() => ({
     root: {
-      // background : '#283593'
+       background : '#8bc34a'
     },
     avatar: {
         height: 60,
@@ -36,7 +36,7 @@ const TopBar = ({ className,  onMobileNavOpen, ...rest }) => {
             </RouterLink>
             <Box flexGrow={1} />
             <Hidden mdDown>
-              <IconButton color="inherit">
+              {/* <IconButton color="inherit">
                 <Badge
                   badgeContent={notifications.length}
                   color="secondary"
@@ -44,7 +44,7 @@ const TopBar = ({ className,  onMobileNavOpen, ...rest }) => {
                 >
                   <NotificationsIcon />
                 </Badge>
-              </IconButton>
+              </IconButton> */}
               <IconButton color="inherit">
                 <InputIcon />
               </IconButton>
