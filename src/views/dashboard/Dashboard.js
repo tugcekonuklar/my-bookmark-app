@@ -1,4 +1,4 @@
-import { useMemo ,useState} from 'react'
+import { useMemo, useState } from 'react'
 import { Container, Box, makeStyles } from '@material-ui/core'
 import Page from '../../component/page/Page'
 import PropType from 'prop-types'
@@ -25,9 +25,9 @@ const Dashboard = ({ title }) => {
     const filteredBookMark = useMemo(() => {
         if (!bookmarks) return []
         if (!searchedText) return bookmarks
-        return bookmarks.filter(bookmark => 
+        return bookmarks.filter(bookmark =>
             bookmark.content.toLocaleLowerCase().includes(searchedText.toLocaleLowerCase())
-            ||  bookmark.title.toLocaleLowerCase().includes(searchedText.toLocaleLowerCase())
+            || bookmark.title.toLocaleLowerCase().includes(searchedText.toLocaleLowerCase())
         );
     }, [bookmarks, searchedText])
 
@@ -38,7 +38,18 @@ const Dashboard = ({ title }) => {
     function handleDelete(index) {
         const newArr = [...bookmarks];
         newArr.splice(index, 1);
-       setBookmarks(newArr);
+        setBookmarks(newArr);
+    }
+
+    function handleCreate(bookmark) {
+        const bm = {
+            content: bookmark.url,
+            tags:[bookmark.tag],
+            image: null,
+            title: "Sample",
+            id: Math.floor(Math.random() * 100) + 7
+        }
+        setBookmarks([...bookmarks, bm])
     }
 
     return (
@@ -47,7 +58,7 @@ const Dashboard = ({ title }) => {
             title={title}
         >
             <Container maxWidth={false}>
-                <ToolBar onChange={handleChange}/>
+                <ToolBar onChange={handleChange} onCreate={handleCreate} />
                 <Box mt={3}>
                     <BookmarkList bookmarks={filteredBookMark} onDelete={handleDelete} />
                 </Box>
