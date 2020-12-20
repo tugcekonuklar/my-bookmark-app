@@ -5,7 +5,9 @@ import PropType from 'prop-types'
 import ToolBar from './ToolBar'
 import BookmarkList from './BookmarkList'
 import dummyData from './data'
-import urlMetaData from '../../utils/urlMetaData';
+import urlMetadata from 'url-metadata';
+
+const CORS_ANYWHERE_URL = "https://cors-anywhere.herokuapp.com/";
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -42,17 +44,25 @@ const Dashboard = ({ title }) => {
     }
 
     function handleCreate(bookmark) {
-        const bm = {
-            content: bookmark.url,
-            tags: [bookmark.tag],
-            image: null,
-            title: "Sample",
-            id: Math.floor(Math.random() * 100) + 7,
-            url: "https://medium.com/@TKonuklar"
-        }
-        debugger;
-        // console.log(urlMetaData(bookmark.url))
-        setBookmarks([...bookmarks, bm])
+        loadMetaData(bookmark);
+    }
+
+    function loadMetaData(bookmark) {
+        urlMetadata(CORS_ANYWHERE_URL + bookmark.url, { ensureSecureImageRequest: false }).then(
+            function (metadata) {
+                const bm = {
+                    content: metadata.description,
+                    tags: [bookmark.tag],
+                    image: metadata.image,
+                    title: metadata.title,
+                    id: Math.floor(Math.random() * 100) + 7,
+                    url: bookmark.url
+                }
+                setBookmarks([...bookmarks, bm])
+            },
+            function (error) { // failure handler
+                console.error(error)
+            })
     }
 
     return (
