@@ -8,6 +8,7 @@ import dummyData from './data'
 import urlMetadata from 'url-metadata';
 
 const CORS_ANYWHERE_URL = "https://cors-anywhere.herokuapp.com/";
+const DEFAULT_IMAGE = "/static/images/undraw_not_found_60pq.svg";
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -53,16 +54,26 @@ const Dashboard = ({ title }) => {
                 const bm = {
                     content: metadata.description,
                     tags: [bookmark.tag],
-                    image: metadata.image,
+                    image: isValidUrl(metadata.image) ? metadata.image : DEFAULT_IMAGE,
                     title: metadata.title,
                     id: Math.floor(Math.random() * 100) + 7,
                     url: bookmark.url
                 }
-                setBookmarks([...bookmarks, bm])
+                bookmarks.unshift(bm);
+                setBookmarks([...bookmarks])
             },
             function (error) { // failure handler
                 console.error(error)
             })
+    }
+
+    function isValidUrl(url){
+        if(url){
+            if(url.startsWith("http")){
+                return true
+            }
+        }
+        return false;
     }
 
     return (

@@ -9,7 +9,7 @@ const useStyles = makeStyles(() => (
         root: {},
         media: {
             height: 100,
-            backgroundImage: `url(/static/images/undraw_not_found_60pq.svg)`
+            // backgroundImage: `url(/static/images/undraw_not_found_60pq.svg)`
         },
         action: {
             backgroundColor: "#b4b4b421"
@@ -31,12 +31,12 @@ const Bookmark = ({ id, title, content, url,tags, imageUrl, className, onDelete,
                     <CardActionArea href={url} target="_blank">
                         <CardMedia
                             className={classes.media}
-                            image={!imageUrl ? DEFAULT_IMAGE : imageUrl}
+                            image={imageUrl ? imageUrl: DEFAULT_IMAGE}
                             component="img"
                             title="Contemplative Reptile"
                         />
                         <CardContent>
-                            <Typography gutterBottom variant="h5" component="h2">
+                            <Typography gutterBottom variant="h6" component="h6" noWrap>
                                 {title}
                             </Typography>
                             <Typography variant="body2" color="textSecondary" component="p" noWrap >
