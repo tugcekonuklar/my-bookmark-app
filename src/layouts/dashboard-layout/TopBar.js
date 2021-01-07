@@ -7,7 +7,6 @@ import PropTypes from 'prop-types';
 import { Link as RouterLink } from 'react-router-dom';
 import Logo from '../../component/logo/Logo'
 import MenuIcon from '@material-ui/icons/Menu';
-import NotificationsIcon from '@material-ui/icons/NotificationsOutlined';
 import InputIcon from '@material-ui/icons/Input';
 
 const useStyles = makeStyles(() => ({
