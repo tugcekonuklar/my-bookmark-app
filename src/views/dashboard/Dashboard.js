@@ -7,7 +7,7 @@ import BookmarkList from './BookmarkList'
 import dummyData from './data'
 import urlMetadata from 'url-metadata';
 
-const CORS_ANYWHERE_URL = "https://cors-anywhere.herokuapp.com/";
+const CORS_ANYWHERE_URL = process.env.CORS_SERVER_URL ||  "https://my-cors-anywhere-server.herokuapp.com/";
 const DEFAULT_IMAGE = "/static/images/undraw_not_found_60pq.svg";
 
 const useStyles = makeStyles((theme) => ({

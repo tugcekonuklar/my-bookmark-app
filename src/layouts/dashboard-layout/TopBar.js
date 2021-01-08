@@ -6,12 +6,15 @@ import clsx from 'clsx'
 import PropTypes from 'prop-types';
 import { Link as RouterLink } from 'react-router-dom';
 import Logo from '../../component/logo/Logo'
+import Title from '../../component/title/Title'
 import MenuIcon from '@material-ui/icons/Menu';
 import InputIcon from '@material-ui/icons/Input';
 
 const useStyles = makeStyles(() => ({
     root: {
-       background : '#8bc34a'
+       background : 'rgb(185, 230, 235)'
+      //  background : '#8bc34a'
+      // background : '#00c4cc'
     },
     avatar: {
         height: 60,
@@ -32,6 +35,7 @@ const TopBar = ({ className,  onMobileNavOpen, ...rest }) => {
           <Toolbar>
             <RouterLink to="/">
               <Logo />
+              <Title/>
             </RouterLink>
             <Box flexGrow={1} />
             <Hidden mdDown>
