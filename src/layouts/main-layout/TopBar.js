@@ -7,12 +7,14 @@ import {
   Toolbar,
   makeStyles
 } from '@material-ui/core';
+import Title from '../../component/title/Title'
 import Logo from '../../component/logo/Logo'
 
 const useStyles = makeStyles(({
   root: {},
   toolbar: {
-    height: 64
+    height: 64,
+    background : '#4A6572'
   }
 }));
 
@@ -28,6 +30,7 @@ const TopBar = ({ className, ...rest }) => {
       <Toolbar className={classes.toolbar}>
         <RouterLink to="/">
           <Logo />
+          <Title/>
         </RouterLink>
       </Toolbar>
     </AppBar>

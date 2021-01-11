@@ -9,6 +9,20 @@ import * as Yup from 'yup';
 
 const useStyles = makeStyles(() => ({
     root: {},
+    search: {
+        "& .MuiBox-root": {
+            width: '90%'
+        }
+    },
+    content: {
+        // background: '#F3F3ED'
+    },
+    primaryButton:{
+        backgroundColor: '#F9AA33',
+        '& .MuiFab-secondary:hover':{
+            backgroundColor:'#ef6c00'
+        }
+    }
 }));
 
 
@@ -42,8 +56,9 @@ const ToolBar = ({ className, onChange, onCreate, ...rest }) => {
                 <Card>
                     <CardContent className={classes.content}>
                         <Box display="flex"
-                            justifyContent="space-between">
-                            <Box maxWidth={500} mt={2}>
+                            justifyContent="space-between"
+                            className={classes.search}>
+                            <Box maxWidth={500} mt={2} >
                                 <TextField
                                     fullWidth
                                     placeholder="Search"
@@ -63,7 +78,7 @@ const ToolBar = ({ className, onChange, onCreate, ...rest }) => {
                                 />
                             </Box>
                             <Fab
-
+                                className={classes.primaryButton}
                                 color="secondary"
                                 aria-describedby={id}
                                 aria-label="add"
@@ -111,44 +126,45 @@ const ToolBar = ({ className, onChange, onCreate, ...rest }) => {
                                                     isSubmitting,
                                                     touched,
                                                     values }) => (
-                                                        <Form>
-                                                            <TextField
-                                                                error={Boolean(touched.url && errors.url)}
+                                                    <Form>
+                                                        <TextField
+                                                            error={Boolean(touched.url && errors.url)}
+                                                            fullWidth
+                                                            helperText={touched.url && errors.url}
+                                                            label="URL"
+                                                            margin="normal"
+                                                            name="url"
+                                                            onBlur={handleBlur}
+                                                            onChange={handleChange}
+                                                            value={values.url}
+                                                            variant="outlined"
+                                                        />
+                                                        <TextField
+                                                            error={Boolean(errors.tag)}
+                                                            fullWidth
+                                                            helperText={errors.tag}
+                                                            label="Tag"
+                                                            margin="normal"
+                                                            name="tag"
+                                                            onBlur={handleBlur}
+                                                            onChange={handleChange}
+                                                            value={values.password}
+                                                            variant="outlined"
+                                                        />
+                                                        <Box my={2}>
+                                                            <Button
+                                                                className={classes.primaryButton}
+                                                                color="secondary"
+                                                                disabled={isSubmitting}
                                                                 fullWidth
-                                                                helperText={touched.url && errors.url}
-                                                                label="URL"
-                                                                margin="normal"
-                                                                name="url"
-                                                                onBlur={handleBlur}
-                                                                onChange={handleChange}
-                                                                value={values.url}
-                                                                variant="outlined"
-                                                            />
-                                                            <TextField
-                                                                error={Boolean(errors.tag)}
-                                                                fullWidth
-                                                                helperText={errors.tag}
-                                                                label="Tag"
-                                                                margin="normal"
-                                                                name="tag"
-                                                                onBlur={handleBlur}
-                                                                onChange={handleChange}
-                                                                value={values.password}
-                                                                variant="outlined"
-                                                            />
-                                                            <Box my={2}>
-                                                                <Button
-                                                                    color="secondary"
-                                                                    disabled={isSubmitting}
-                                                                    fullWidth
-                                                                    type="submit"
-                                                                    variant="contained"
-                                                                >
-                                                                    Add
+                                                                type="submit"
+                                                                variant="contained"
+                                                            >
+                                                                Add
                                                         </Button>
-                                                            </Box>
-                                                        </Form>
-                                                    )}
+                                                        </Box>
+                                                    </Form>
+                                                )}
                                             </Formik>
                                         </CardContent>
                                     </Card>

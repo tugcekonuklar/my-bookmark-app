@@ -1,7 +1,7 @@
 import React from 'react';
 import { Navigate } from 'react-router-dom';
 import Home from './pages/home/Home';
-import Dashboard from './views/dashboard/Dashboard';
+import Dashboard from './views/bookmark/Dashboard';
 import AddBookMark from './pages/add-bookmark/AddBookMark'
 import MainLayout from './layouts/main-layout/MainLayout'
 import DashBoardLayout from './layouts/dashboard-layout/DashBoardLayout'

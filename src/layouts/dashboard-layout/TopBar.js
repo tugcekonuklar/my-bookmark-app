@@ -12,7 +12,8 @@ import InputIcon from '@material-ui/icons/Input';
 
 const useStyles = makeStyles(() => ({
     root: {
-       background : 'rgb(185, 230, 235)'
+      background: '#4A6572'
+       //background : 'rgb(185, 230, 235)'
       //  background : '#8bc34a'
       // background : '#00c4cc'
     },

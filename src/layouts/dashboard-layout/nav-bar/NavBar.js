@@ -137,8 +137,8 @@ const NavBar = ({ onMobileClose, openMobile }) => {
             </List>
         </Box>
         <Box flexGrow={1} />
-        <Box m={3}  bgcolor="background.dark">
-            <Button color="primary" variant="contained" style={{width: "100%"}}>
+        <Box m={3} bgcolor="background.dark">
+            <Button variant="outlined" style={{ width: "100%"}}>
                 SIGN OUT
             </Button>
         </Box>

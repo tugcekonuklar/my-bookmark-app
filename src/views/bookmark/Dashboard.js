@@ -12,10 +12,11 @@ const DEFAULT_IMAGE = "/static/images/undraw_not_found_60pq.svg";
 
 const useStyles = makeStyles((theme) => ({
     root: {
-        backgroundColor: theme.palette.background.dark,
+        //backgroundColor: theme.palette.background.dark,
         minHeight: '100%',
         paddingBottom: theme.spacing(3),
-        paddingTop: theme.spacing(3)
+        paddingTop: theme.spacing(3),
+        background: '#F3F3ED'
     }
 }));
 
