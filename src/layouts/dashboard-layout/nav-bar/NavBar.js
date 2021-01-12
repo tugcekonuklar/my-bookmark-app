@@ -6,9 +6,10 @@ import { Cloud, Folder, Hash } from 'react-feather';
 import PropTypes from 'prop-types'
 
 const user = {
-    avatar: 'https://www.gravatar.com/avatar/e03e6801a0d1a11ab1472c1936279d9e?d=mm&amp;s=60',
+    // avatar: 'https://www.gravatar.com/avatar/e03e6801a0d1a11ab1472c1936279d9e?d=mm&amp;s=60',
+    avatar: '/static/images/avatars/avatar_2.png',
     jobTitle: 'Senior Software Engineer',
-    email: 'tkonuklar@gmail.com'
+    email: 'example@test.com'
 };
 
 const collections = [
@@ -47,7 +48,8 @@ const useStyles = makeStyles((theme) => ({
     avatar: {
         cursor: 'pointer',
         width: 64,
-        height: 64
+        height: 64,
+        marginBottom: '5px'
     }
 }));
 

@@ -9,7 +9,7 @@ const useStyles = makeStyles(() => (
         root: {},
         media: {
             height: 100,
-            // backgroundImage: `url(/static/images/undraw_not_found_60pq.svg)`
+            // backgroundImage: `url(/static/undraw_not_found_60pq.svg)`
         },
         action: {
             backgroundColor: "#b4b4b421"
@@ -22,7 +22,7 @@ const Bookmark = ({ id, title, content, url,tags, imageUrl, className, onDelete,
     const tagString = tags.map((tag, index) => (
         <Tag content={tag} key={index} />
     ));
-    const DEFAULT_IMAGE = "/static/images/undraw_not_found_60pq.svg";
+    const DEFAULT_IMAGE = "/static/logo_fox_128.svg";
 
     return (
         <div className={clsx(classes.root, className)}

@@ -7,8 +7,10 @@ import BookmarkList from './BookmarkList'
 import dummyData from './data'
 import urlMetadata from 'url-metadata';
 
-const CORS_ANYWHERE_URL = process.env.CORS_SERVER_URL ||  "https://my-cors-anywhere-server.herokuapp.com/";
-const DEFAULT_IMAGE = "/static/images/undraw_not_found_60pq.svg";
+// const CORS_ANYWHERE_URL = process.env.CORS_SERVER_URL ||  "https://my-cors-anywhere-server.herokuapp.com/";
+const CORS_ANYWHERE_URL = "https://cors-anywhere.herokuapp.com/" ||  "https://my-cors-anywhere-server.herokuapp.com/";
+
+const DEFAULT_IMAGE = "/static/logo_fox_128.svg";
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -16,7 +18,6 @@ const useStyles = makeStyles((theme) => ({
         minHeight: '100%',
         paddingBottom: theme.spacing(3),
         paddingTop: theme.spacing(3),
-        background: '#F3F3ED'
     }
 }));
 
@@ -53,7 +54,7 @@ const Dashboard = ({ title }) => {
         urlMetadata(CORS_ANYWHERE_URL + bookmark.url, { ensureSecureImageRequest: false }).then(
             function (metadata) {
                 const bm = {
-                    content: metadata.description,
+                    content: isEmpty(metadata.description) ?  "No Content" : metadata.description ,
                     tags: [bookmark.tag],
                     image: isValidUrl(metadata.image) ? metadata.image : DEFAULT_IMAGE,
                     title: metadata.title,
@@ -73,6 +74,14 @@ const Dashboard = ({ title }) => {
             if(url.startsWith("http")){
                 return true
             }
+        }
+        return false;
+    }
+
+    function isEmpty(value){
+        debugger;
+        if(value || value==''){
+            return true
         }
         return false;
     }
