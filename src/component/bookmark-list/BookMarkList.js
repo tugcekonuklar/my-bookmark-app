@@ -14,10 +14,11 @@ const BookMarkList = (props) => {
         <Grid container alignContent="center" direction="row" justify="space-between">
             <Grid container alignContent="center" direction="row">
                 {bookMarks}
+                <Grid item xs style={{width:'100%'}}>
+                <Typography variant="subtitle1" style={{color: '#808080'}}>{props.bookmarks.length} bookmarks </Typography>
             </Grid>
-            <Grid item xs style={{width:'100%'}}>
-                <Typography variant="subtitle1" style={{color: '#808080'}}>{bookMarks.length} bookmarks </Typography>
             </Grid>
+           
         </Grid>
     )
 }
