@@ -80,10 +80,10 @@ const Dashboard = ({ title }) => {
 
     function isEmpty(value){
         debugger;
-        if(value || value==''){
-            return true
+        if(!!value){
+            return false
         }
-        return false;
+        return true;
     }
 
     return (
