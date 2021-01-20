@@ -1,6 +1,5 @@
 import React from 'react';
 import { Navigate } from 'react-router-dom';
-import Home from './pages/home/Home';
 import Dashboard from './views/bookmark/Dashboard';
 import AddBookMark from './pages/add-bookmark/AddBookMark'
 import MainLayout from './layouts/main-layout/MainLayout'
@@ -13,7 +12,6 @@ const routes = [
     element: <DashBoardLayout />,
     children: [
       { path: 'dashboard', element: <Dashboard />},
-      { path: 'home', element: <Home />},
       { path: 'addBookmark', element: <AddBookMark /> },
       { path: '*', element: <Navigate to="/404" /> }
     ]
