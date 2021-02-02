@@ -1,6 +1,7 @@
-import { BrowserRouter, useRoutes } from 'react-router-dom';
+import { useRoutes } from 'react-router-dom';
 import GlobalStyles from './component/GlobalStyles'
 import routes from './routes';
+import './App.css'
 
 function App() {
   const routing = useRoutes(routes);

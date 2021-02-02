@@ -1,6 +1,6 @@
-import { useState } from 'react'
+// import { useState } from 'react'
 import {
-  AppBar, Badge, Box, Hidden, IconButton,Button, Toolbar, makeStyles
+  AppBar, Box, Hidden, IconButton,Button, Toolbar, makeStyles
 } from '@material-ui/core'
 import clsx from 'clsx'
 import PropTypes from 'prop-types';
@@ -29,7 +29,7 @@ const useStyles = makeStyles(() => ({
 
 const TopBar = ({ className, onMobileNavOpen, ...rest }) => {
   const classes = useStyles();
-  const [notifications] = useState([1, 2]);
+  //const [notifications] = useState([1, 2]);
 
   return (
     <AppBar

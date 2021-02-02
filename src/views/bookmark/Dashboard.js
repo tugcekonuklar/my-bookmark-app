@@ -7,8 +7,8 @@ import BookmarkList from './BookmarkList'
 import dummyData from './data'
 import urlMetadata from 'url-metadata';
 
-// const CORS_ANYWHERE_URL = process.env.CORS_SERVER_URL ||  "https://my-cors-anywhere-server.herokuapp.com/";
-const CORS_ANYWHERE_URL = "https://cors-anywhere.herokuapp.com/" ||  "https://my-cors-anywhere-server.herokuapp.com/";
+ const CORS_ANYWHERE_URL = process.env.CORS_SERVER_URL ||  "https://my-cors-anywhere-server.herokuapp.com/";
+//const CORS_ANYWHERE_URL = "https://cors-anywhere.herokuapp.com/" ||  "https://my-cors-anywhere-server.herokuapp.com/";
 
 const DEFAULT_IMAGE = "/static/logo_fox_128.svg";
 
@@ -79,7 +79,6 @@ const Dashboard = ({ title }) => {
     }
 
     function isEmpty(value){
-        debugger;
         if(!!value){
             return false
         }

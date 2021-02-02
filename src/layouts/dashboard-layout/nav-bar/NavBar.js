@@ -1,5 +1,5 @@
 import { useEffect } from 'react'
-import { Avatar, Box, Button, Divider, Drawer, Hidden, List, Typography, makeStyles } from '@material-ui/core';
+import { Avatar, Box, Divider, Drawer, Hidden, List, Typography, makeStyles } from '@material-ui/core';
 import { Link as RouterLink, useLocation } from 'react-router-dom';
 import NavItem from './NavItem'
 import { Cloud, Folder, Hash } from 'react-feather';

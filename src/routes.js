@@ -1,7 +1,7 @@
 import React from 'react';
 import { Navigate } from 'react-router-dom';
 import Dashboard from './views/bookmark/Dashboard';
-import AddBookMark from './pages/add-bookmark/AddBookMark'
+import AddBookMark from './views/add-bookmark/AddBookMark'
 import MainLayout from './layouts/main-layout/MainLayout'
 import DashBoardLayout from './layouts/dashboard-layout/DashBoardLayout'
 import NotFoundView from './errors/NotFoundView'
